@@ -1,16 +1,20 @@
 {
     "manifest_version": 3,
+    "default_locale": "en",
     "name": "ScamNet",
     "description": "Blocks scam websites and notifies if you visit a likely scam website.",
     "version": "1.0",
     
     "icons": {
-        "1024": "images/toolbar-icon.png"
+        "48": "images/48.png",
+        "96": "images/96.png",
+        "128": "images/128.png",
+        "256": "images/256.png",
+        "512": "images/512.png"
     },
     
     "background": {
-        "scripts": ["background.js"],
-        "persistent": false
+        "service_worker": "background.js"
     },
     
     "content_scripts": [{
@@ -18,5 +22,5 @@
         "matches": [ "<all_urls>" ]
     }],
     
-    "permissions": ["tabs", "nativeMessaging"]
+    "permissions": ["nativeMessaging"]
 }
